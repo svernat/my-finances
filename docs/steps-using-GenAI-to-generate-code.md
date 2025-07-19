@@ -6,3 +6,6 @@
 
 #### Création du lanceur de l'application MyFinances
 - "Créer le module my-finances-app du lanceur de l'application Spring Boot MyFinances"
+
+#### Ajoute le monitoring de l'application avec Actuator
+- "Ajoute le monitoring de l'application avec Spring Boot Actuator"
