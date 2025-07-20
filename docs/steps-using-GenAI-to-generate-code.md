@@ -9,3 +9,6 @@
 
 #### Ajoute le monitoring de l'application avec Actuator
 - "Ajoute le monitoring de l'application avec Spring Boot Actuator"
+
+### Initialisation du frontend
+- "Initialise une application web avec React et NextJS"
