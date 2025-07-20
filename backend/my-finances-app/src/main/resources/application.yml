@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: my-finances
+  security:
+    oauth2:
+      client:
+        registration:
+          myfinances-oidc:
+            provider: myfinances-provider
+            client-id: ${OIDC_CLIENT_ID}
+            client-secret: ${OIDC_CLIENT_SECRET}
+            scope: openid,profile,email
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          myfinances-provider:
+            issuer-uri: ${OIDC_ISSUER_URI}
+            authorization-uri: ${OIDC_AUTHORIZATION_URI}
+            token-uri: ${OIDC_TOKEN_URI}
+            user-info-uri: ${OIDC_USER_INFO_URI}
+            jwk-set-uri: ${OIDC_JWK_SET_URI}
+            user-name-attribute: sub
+      resourceserver:
+        jwt:
+          issuer-uri: ${OIDC_ISSUER_URI}
+          jwk-set-uri: ${OIDC_JWK_SET_URI}
+
+# Server configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: when_authorized
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: ${spring.application.name}
+    description: MyFinances gere les comptes bancaires des utilisateurs
+    version: 1.0.0
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: DEBUG
+    com.myfinances: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
