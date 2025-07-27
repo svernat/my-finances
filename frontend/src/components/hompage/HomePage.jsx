@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import reactLogo from '../assets/react.svg';
+import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
 
-const HomePage = () => {
+const HomePage = ({ user, onLogout }) => {
   const [count, setCount] = useState(0);
+  
+  // Extract user information
+  const userName = user?.profile?.name || user?.profile?.preferred_username || 'User';
 
   return (
     <>
@@ -25,11 +28,22 @@ const HomePage = () => {
           <h3 style={{ margin: 0, color: '#fff' }}>MyFinances</h3>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-          <>
-            <span style={{ color: '#fff' }}>
-              Bonjour
-            </span>
-          </>
+          <span style={{ color: '#fff' }}>
+            Bonjour {userName}
+          </span>
+          <button
+            onClick={onLogout}
+            style={{
+              backgroundColor: '#646cff',
+              color: 'white',
+              border: 'none',
+              padding: '5px 10px',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Déconnexion
+          </button>
         </div>
       </div>
 
@@ -54,6 +68,13 @@ const HomePage = () => {
           <p>
             Edit <code>src/components/HomePage.jsx</code> and save to test HMR
           </p>
+        </div>
+        
+        <div style={{ marginTop: '20px', padding: '20px', border: '1px solid #333', borderRadius: '8px' }}>
+          <h2>User Information</h2>
+          <pre style={{ textAlign: 'left', overflow: 'auto' }}>
+            {JSON.stringify(user.profile, null, 2)}
+          </pre>
         </div>
       </div>
     </>

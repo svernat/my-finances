@@ -32,7 +32,7 @@ Protège le backend par une authentification OIDC avec Spring Security
 
 ### Protège le frontend par une authentification OIDC
 ```
-sur l'application web, ajoute l'authentification OIDC avec keycloak sur le host localhost et le port 9100 sur le royaume MyHome et le client publique MyFinances-web, la configuration OIDC est disponible ici http://localhost:9100/realms/MyHome/.well-known/openid-configuration
+sur l'application web frontend, ajoute l'authentification OIDC avec keycloak sur le host localhost et le port 9100 sur le royaume MyHome et le client publique MyFinances-web, la configuration OIDC est disponible ici http://localhost:9100/realms/MyHome/.well-known/openid-configuration en utilisant la librairie oidc-react
 ```
 Il y a une page avec un bouton login sur lequel il faut cliquer pour rediriger vers Keycloak.
 Je vais demander à rediriger vers la page de connexion de Keycloak directement si on n'est pas encore connecté.

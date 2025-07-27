@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import reactLogo from '../assets/react.svg';
+import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
 
 // Define types for inline styles
@@ -75,11 +75,9 @@ const HomePage = (): React.ReactElement => {
           <h3 style={headerTitleStyle}>MyFinances</h3>
         </div>
         <div style={navItemsStyle}>
-          <>
-            <span style={{ color: '#fff' }}>
-              Bonjour
-            </span>
-          </>
+          <span style={{ color: '#fff' }}>
+            Bonjour
+          </span>
         </div>
       </div>
 

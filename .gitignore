@@ -61,3 +61,7 @@ replay_pid*
 # typescript
 **/*.tsbuildinfo
 **/next-env.d.ts
+
+# Code mort, essai de frontends dans d'autres frameworks ou avec une inspiration d'un autre projet
+frontend.nextjs/
+frontend.viteSkAIfall/

@@ -1,0 +1,11 @@
+{
+  "download": "Chargement",
+  "shouldLog": "Vous devez vous connecter pour accéder aux fonctionnalités",
+  "login": "Se connecter",
+  "logout": "Se déconnecter",
+  "userError": "Erreur lors de la récupération des informations utilisateur",
+
+  "userName": "Nom d'utilisateur",
+  "mail": "Email",
+  "roles": "Droits"
+}
