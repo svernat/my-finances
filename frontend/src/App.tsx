@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import HomePage from './components/hompage/HomePage.tsx';
+import HomePage from './components/homepage/HomePage.tsx';
 import './styles/App.css';
 import {useTranslation} from "react-i18next";
 import { useAuth } from "./hooks/useAuth";

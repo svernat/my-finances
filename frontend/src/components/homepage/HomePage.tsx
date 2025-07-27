@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
+import myFinancesLogo from '../../assets/images/MyFinances.svg';
 import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
+import {useAuth} from "../../hooks/useAuth.ts";
 
 // Define types for inline styles
 type HeaderStyleProps = {
@@ -36,6 +38,9 @@ type MainContentStyleProps = {
 
 const HomePage = (): React.ReactElement => {
   const [count, setCount] = useState<number>(0);
+  const {user, logout} = useAuth();
+// Extract user information
+  const userName = user?.profile?.name || user?.profile?.preferred_username || 'User';
 
   const headerStyle: HeaderStyleProps = {
     position: 'fixed',
@@ -71,13 +76,27 @@ const HomePage = (): React.ReactElement => {
     <>
       {/* Header */}
       <div style={headerStyle}>
-        <div>
+        <div style={navItemsStyle}>
+          <img src={myFinancesLogo} alt="MyFinances"/>
           <h3 style={headerTitleStyle}>MyFinances</h3>
         </div>
         <div style={navItemsStyle}>
           <span style={{ color: '#fff' }}>
-            Bonjour
+            Bonjour {userName}
           </span>
+          <button
+              onClick={logout}
+              style={{
+                backgroundColor: '#646cff',
+                color: 'white',
+                border: 'none',
+                padding: '5px 10px',
+                borderRadius: '4px',
+                cursor: 'pointer'
+              }}
+          >
+            Déconnexion
+          </button>
         </div>
       </div>
 
