@@ -6,16 +6,16 @@ Elle permet de gérer et simuler les épargnes, les emprunts et les gestions loc
 MyFinances est une application WEB composé d'un Frontend et d'un Backend.
 
 ## Frontend
-Le Frontend est une Single Page Application (SPA) qui s'appuie sur le langage Javascript / Typescript, la librairie React et le framework Next.js.
+Le Frontend est une Single Page Application (SPA) qui s'appuie sur le langage Javascript / Typescript, la librairie React et l'outil de build Vite.
 
 ### Structure du Frontend
-Le Frontend est organisé selon la structure standard de Next.js :
-- `pages/` : Contient les pages de l'application (routage automatique)
-- `components/` : Contient les composants réutilisables
-- `styles/` : Contient les fichiers CSS globaux et les modules CSS
-
-### Exécution du Frontend
-
+Le Frontend est organisé selon la structure standard d'un projet React avec Vite :
+- `src/` : Contient le code source de l'application
+  - `assets/` : Contient les ressources statiques (images, etc.)
+  - `components/` : Contient les composants réutilisables (à créer)
+  - `App.tsx` : Le composant principal de l'application
+  - `main.tsx` : Le point d'entrée de l'application
+- `public/` : Contient les fichiers statiques accessibles publiquement
 
 ## Backend
 Le Backend s'appuie sur le langage Java et le framework Spring Boot.
@@ -42,8 +42,7 @@ Depuis le répertoire backend, lancer la commande
 mvn -U clean package
 ```
 
-### Compilation du frontend
-Depuis le répertoire frontend, lancer la commande
+### Compilation et exécution du frontend
 Pour exécuter le Frontend en mode développement :
 ```bash
 cd frontend
@@ -51,12 +50,13 @@ npm install
 npm run dev
 ```
 
-L'application sera accessible à l'adresse http://localhost:3000.
+L'application sera accessible à l'adresse http://localhost:5173 (port par défaut de Vite).
 
 Pour construire l'application pour la production :
 ```bash
 cd frontend
 npm install
 npm run build
-npm start
 ```
+
+Les fichiers de production seront générés dans le répertoire `dist/`. Vous pouvez ensuite servir ces fichiers avec un serveur web statique.

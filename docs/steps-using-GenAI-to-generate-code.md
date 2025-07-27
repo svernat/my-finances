@@ -18,7 +18,11 @@ Ajoute le monitoring de l'application avec Spring Boot Actuator
 
 ### Initialisation du frontend
 ```
-Initialise une application web avec React et NextJS
+Initialise une application web avec React et Vite
+```
+Mais l'application est générée en Javascript au lieu de Typescript.
+```
+Utiliser TypeScript pour le frontend au lieu de JavaScript.
 ```
 
 ### Protège le backend par une authentification OIDC
@@ -28,5 +32,10 @@ Protège le backend par une authentification OIDC avec Spring Security
 
 ### Protège le frontend par une authentification OIDC
 ```
-Protège le frontend par une authentification OIDC avec React Auth0
+sur l'application web, ajoute l'authentification OIDC avec keycloak sur le host localhost et le port 9100 sur le royaume MyHome et le client publique MyFinances-web, la configuration OIDC est disponible ici http://localhost:9100/realms/MyHome/.well-known/openid-configuration
+```
+Il y a une page avec un bouton login sur lequel il faut cliquer pour rediriger vers Keycloak.
+Je vais demander à rediriger vers la page de connexion de Keycloak directement si on n'est pas encore connecté.
+```
+en frontend, pourriez-vous supprimer la page de connexion et rediriger directement vers keycloak si vous n'êtes pas authentifié ?
 ```
